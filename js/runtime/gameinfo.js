@@ -10,18 +10,36 @@ export default class GameInfo {
     ctx.font      = "20px Arial"
 
     ctx.fillText(
-      'Score: '+ score,
+      'Hit: ' + score.toFixed(2),
       10,
       30
     )
     ctx.fillText(
-      'Absement: ' + absement,
+      'Absement: ' + absement.toFixed(2),
       10,
       50
     )
+    let total = score / absement;
+    ctx.fillText(
+      'Score: ' + total.toFixed(2),
+      10,
+      70
+    )
+
+    // ctx.fillText(
+    //   '|',
+    //   150,
+    //   80
+    // )
+
+    // ctx.fillText(
+    //   '|',
+    //   200,
+    //   80
+    // )
   }
 
-  renderGameOver(ctx, score) {
+  renderGameOver(ctx, score, absement) {
     ctx.drawImage(atlas, 0, 0, 119, 108, screenWidth / 2 - 150, screenHeight / 2 - 100, 300, 300)
 
     ctx.fillStyle = "#ffffff"
@@ -29,13 +47,15 @@ export default class GameInfo {
 
     ctx.fillText(
       'GAME OVER',
-      screenWidth / 2 - 40,
+      screenWidth / 2 - 60,
       screenHeight / 2 - 100 + 50
     )
 
+    score = score / absement;
+
     ctx.fillText(
-      'SCORE: ' + score,
-      screenWidth / 2 - 40,
+      'SCORE: ' + score.toFixed(2),
+      screenWidth / 2 - 60,
       screenHeight / 2 - 100 + 130
     )
 
@@ -49,7 +69,7 @@ export default class GameInfo {
 
     ctx.fillText(
       'RESTART',
-      screenWidth / 2 - 40,
+      screenWidth / 2 - 45,
       screenHeight / 2 - 100 + 205
     )
 

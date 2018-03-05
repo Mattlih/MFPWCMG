@@ -76,7 +76,7 @@ export default class Main {
         }
       }
       if (this.player.isOutside()) {
-        databus.absement += 0.1
+        databus.absement += 0.0001
       }
 
 
@@ -86,9 +86,10 @@ export default class Main {
       let enemy = databus.enemys[i]
 
       if (this.player.isCollideWith(enemy)) {
-        databus.gameOver = true
+        //databus.gameOver = true
+        databus.score -= 0.3;
 
-        break
+        //break
       }
     }
   }
@@ -136,7 +137,7 @@ export default class Main {
 
     // 游戏结束停止帧循环
     if (databus.gameOver) {
-      this.gameinfo.renderGameOver(ctx, databus.score)
+      this.gameinfo.renderGameOver(ctx, databus.score, databus.absement )
 
       if (!this.hasEventBind) {
         this.hasEventBind = true

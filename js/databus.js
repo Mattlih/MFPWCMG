@@ -20,7 +20,7 @@ export default class DataBus {
   reset() {
     this.frame      = 0
     this.score      = 0
-    this.absement   = 0
+    this.absement   = 1
     this.bullets    = []
     this.enemys     = []
     this.animations = []
