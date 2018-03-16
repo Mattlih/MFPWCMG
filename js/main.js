@@ -76,7 +76,7 @@ export default class Main {
         }
       }
       if (this.player.isOutside()) {
-        databus.absement += 0.0001
+        databus.absement += 0.0003
       }
 
 
